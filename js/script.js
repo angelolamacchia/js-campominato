@@ -32,8 +32,9 @@ while (arrayNumeriUt.length < 84) {
     if (presente(arrayNumeriUt,numeroUt)==false) {
         //inserisco il numero utente nell'array
         arrayNumeriUt.push(numeroUt);
-    } else {
-        alert("Il numero è stato utilizzato");
+        document.getElementById("numeri").innerHTML = numeroUt;
+    } else if (presente(arrayNumeriUt,numeroUt)==true) {
+        alert("Il numero è stato utilizzato o errato");
     }
     console.log(arrayNumeriUt);
     
@@ -43,9 +44,9 @@ while (arrayNumeriUt.length < 84) {
         alert("Ritenti?");
         location.reload();
         break; 
-    } else {
-        alert("Sei fortunato il numero non era nell'elenco");
-    }
+     } //else if (presente(arrayNumeri,numeroUt) ==false) {
+    //     alert("Sei fortunato il numero non era nell'elenco");
+    // }
 }
 
 
