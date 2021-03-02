@@ -17,7 +17,7 @@ var arrayNumeriUt = [];
 
 //l'utente decide la difficoltà
 do {
-    var difficoltàUt = prompt("Inserire difficolta: 0 per Facile, 1 per Medio, 2 per difficile");
+    var difficoltàUt = prompt("Inserire difficolta: 0 per Facile, 1 per Medio, 2 per Difficile");
     console.log(difficoltàUt);
 } while (difficoltàUt > 2)
 
@@ -60,15 +60,15 @@ while (arrayNumeriUt.length < (max - numeroBombe) && partitaPersa==false) {
         //inserisco il numero utente nell'array
         arrayNumeriUt.push(numeroUt);
     } else if (presente(arrayNumeriUt,numeroUt)==true) {
-        //verifico che il numero non è stato utilizzato
+        //verifico che il numero non sia stato utilizzato
         alert("Il numero è stato utilizzato");
     }
     
     if (presente(arrayBombe,numeroUt)==true) {
         alert("Boom hai preso il numero sbagliato");
         alert("Il tuo punteggio è: " + arrayNumeriUt.length);
-        // alert("Ritenti?");
-        // location.reload();
+        alert("Ritenti?");
+        location.reload();
         partitaPersa = true;
     }
 
