@@ -32,12 +32,11 @@ if (difficoltàUt == 0) {
 }
 
 //genero e controllo che i numeri siano diversi
-var i = 0;
+
 do {
     var numeroCasuale = numeroRandom(1,max);
     if (presente(arrayBombe,numeroCasuale)==false) {
         arrayBombe.push(numeroCasuale);
-        i++;
     }   
 } while (arrayBombe.length < numeroBombe);
 
@@ -45,9 +44,7 @@ console.log(arrayBombe);
 
 //flag per interrompere il ciclo
 var partitaPersa = false; 
-
 while (arrayNumeriUt.length < (max - numeroBombe) && partitaPersa==false) {
-    partitaPersa = false;
     do {
         //variabile numero utente
         var numeroUt = parseInt( prompt("Inserire numero da 1 a " + max));
@@ -64,9 +61,10 @@ while (arrayNumeriUt.length < (max - numeroBombe) && partitaPersa==false) {
         alert("Il numero è stato utilizzato");
     }
     
+    //il ciclo finisce se l'utente sceglie una bomba
     if (presente(arrayBombe,numeroUt)==true) {
         alert("Boom hai preso il numero sbagliato");
-        alert("Il tuo punteggio è: " + arrayNumeriUt.length);
+        alert("Il tuo punteggio è: " + (arrayNumeriUt.length -1));
         alert("Ritenti?");
         location.reload();
         partitaPersa = true;
